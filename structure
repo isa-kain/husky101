@@ -1,1 +1,75 @@
-This is where structure will go, referencing textfiles and referencephotos.
+def begin():
+    start = input("Welcome. Are you ready? Y / N")
+    if 'Y' in start:
+            return 1
+def wake_up():
+    print("There is a heaviness in your lungs. Your breath comes slowly, thickly, dragging through your throat and filling your chest. Your limbs feel weightless, and they respond sluggishly as you attempt to move. You open your eyes, and the world is a hazy, diffused orange, as if you were lying at the bottom of a pool.") 
+    print("Wait. \nYou realize you're surrounded by liquid. You're in a tank and you're suspended in liquid. You're going to drown holy shit you're – ")
+    print("Your breathing speeds up, your throat burning as you – wait. You can breathe the liquid. It's fine. \nYou force your breathing to slow. You're fine. Waking up from long missions is always disorienting, though usually the stasis capsule automatically drains the suspension liquid before revival.")
+    print("Your breathing pick up again. This may be a problem. If you're awake before the stasis liquid has been drained from your pod, then something is very wrong. You need to get out, immediately.")
+    
+    choice_break = input("Break out? Y / N")
+    break_out = "You drag your arms from your sides and slam them weakly against the lid of your capsule. Using your fists, then your palms, then your feet you bang against the sides of your capsule, to no effect. Your breath is speeding up again."
+    exit_capsule = "There's a muffled sucking sound as the lid of your capsule whirs to life, lifting away as the liquid begins to drain. You attempt to sit up, flopping back down weakly as your muscles betray you. You turn on your side, the stasis liquid dripping thickly from your mouth as you gag. You can't draw a breath, your lungs still choked with fluid. The reassimilation process is always horrible, tens of minutes of feeling like you're drowning as the stasis liquid is absorbed into your body. All you can do now is wait."
+    calm_down = "You sag limply against the bottom of your capsule. There's no way you'll be able to break out of this thing; it was built to withstand any number of disasters. Not that you fully trust it to be that effective; the tech of this tank is decades old. Your employer was just too cheap to update anything, especially for the lowly scouting team. \n Well, you're going to die here. How wonderful. This is exactly how you imagined a career as a planetary scientist to go. You love dying. Really. \n You're getting bored. Dying takes a long time. You pull your arms from your sides and being feeling the bounds of your death prison, you know, just in case you find a magic death button. Your fingers catch on something by your left shoulder. You press it, and –"
+    calm_not = "You continue to lose your shit. You did not spend years of your life training to be a planetary scientist just to die in a stasis tank. In your flailing, you twist into the left side of the capsule. Something digs into your shoulder, and you twist and manically claw it. It's a button. You press it, and –"
+    if "Y" in choice_break:
+        print(break_out)
+        choice_calm = input("Would you like to calm down a bit? Y / N")
+        if "Y" in choice_calm:
+            print(calm_down)
+            print(exit_capsule)
+        else:
+            print(calm_not)
+            print(exit_capsule)
+    elif "N" in choice_break:
+        print(calm_down)
+        print(exit_capsule)
+
+def capsule_puzzle():
+    print()
+                
+def explore_stasis():
+    print("You lay limply in your tank, now empty. Your chest burns as air returns, slowly, to your lungs. You manage to push yourself up, though weakly; your muscles are thin and atrophied, limbs little more than bone and skin. You climb out of your tank, grasping the edge for balance, and crumple to the floor. You shiver as you lay there, medical gown clinging wetly to your skin.")
+    
+    examine_own = "You grasp the edge of your capsule and strain upwards, shaking with effort as you struggle to your feet. You pause for breath once upright, bracing your arms against the rim of your capsule. Now that you're awake, there's nothing inside. You reach up and pull down the lid, revealing the flickering displays lining the outside: static runs through the main dashboard, disrupting an empty vitals display; red text flashes at the top of the dashboard, SYSTEMS ERROR: EMERGENCY REVIVAL. \nYou wonder what made your capsule short out. You suppose that the systems are old enough that it shouldn't come as a surprise; your company is always loathe to give the scouting operations the funding they need. They prefer to keep their money concentrated in corporate. Never mind that the mining operations are their real source of revenue. Selfish bastards."
+    examine_others = "You grasp the edge of your capsule and strain upwards, shaking with effort as you struggle to your feet. You pause for breath once upright, turning to observe the room. There are five capsules besides your own, housing the crew members you were barely introduced to before you all were placed in stasis. Two capsules have completely dark displays, two others look about as they should, and the last – \nThe last capsule is open."
+    examine_dark = "You make your halting way to the capsules with darkened displays. Your gut clenches as you get closer. None of the functions of the capsule seem to be working; the stasis liquid of both is too still, congealed fluid rimming the half-drained tanks. You peer through the crusted lid of the tank and have to take a step back. Your crewmate, a materials scientist, peers up at you with half-lidded, vacant eyes. Her ashen, water-logged face has its own gravity, pulling your eyes back to it when you try to look away. This was her first mission. She shook your hand and told you that this was her first opportunity to apply her schooling. You force yourself away from her capsule. Her casket now. \nYou move on to the other darkened capsule, prepared now for what you'll find. It's the pilot's face that looms out at you now, oddly discolored through the filter of the stasis liquid. He was charming man from what you'd seen of him, but more importantly, he was your ticket out of here. Hopefully you'll be able to put out a distress call without him; you know the pilot held the majority of the ship's access codes. All systems on board can be accessed with his fingerprint, where other crew members have more limited access. Two of your crewmates are dead; hopefully, neither are your chances at getting out of here."
+    examine_fine = "The two capsules closest to you seem to be fine. You approach the first capsule. The face of the ship's engineer lies there, serene. She's alive. You breathe a sigh of relief. The medic lying in the capsule beside hers is similarly not dead."
+    examine_open = "You approach the open capsule apprehensively, but your nerves are for naught. It's empty. It seems that the capsule has executed its self-cleaning routine, and no residue remains in the tank. There are towels scattered about the base of the capsule, gone stiff as the viscous stasis liquid dried them into their contorted shapes. You pull down the capsule lid, revealing a dark screen. It does not respond when you try to touch it."
+    open_thought = "You remember the occupant of this capsule. He was a mechanic, there to make sure the company's ships don't break down. Which they do anyways, but that's not his fault. Though, he was reassigned to your mission at the last moment, and you've heard there have been…problems with his past assignments. And, why is his the only capsule that seems to be in perfect condition? This seems suspicious. \nWell, even if he has nothing to do with these strange malfunctions, you should probably find him. Maybe he'll have insight into what crippled the stasis bay."
+    
+    choice_look = input("If you would like to examine your own capsule, enter ''A''. If you would like to examine the other capsules, enter ''B''.")
+    if "A" in choice_look:
+        print(examine_own)
+        print("You decide you should probably take a look around at the other capsules as well.")
+        print(examine_others)
+    elif "B" in choice_look: 
+        print(examine_others)
+    
+    def investigate_capsules(choice_investigate): 
+        check = [0,0,0]
+        if "A" in choice_investigate:
+            check[0] = 1
+            print(examine_dark)
+        elif "B" in choice_investigate:
+            check[1] = 1
+            print(examine_fine)
+            capsule_puzzle()
+        elif "C" in choice_investigate:
+            check[2] = 1
+            print(examine_open)
+            print(open_thought)
+        if check[0]==1 and check[1]==1 and check[2]==1:
+            print("You've learned all you can here. Move on; you have a mystery to solve.")
+            return 1
+     
+    complete = 0
+    while complete==0:  
+        choice_investigate = input("Type ''A'' if you would like to examine the darkened capsules. Type '''B''' if you would like to examine the stable capsules. Type '''C''' if you would like to examine the open capsule.")
+        complete = investigate_capsules(choice_investigate)
+        
+def chapter_one():
+    begin()
+    wake_up()
+    explore_stasis()
