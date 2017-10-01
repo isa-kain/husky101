@@ -1,75 +1,844 @@
-def begin():
-    start = input("Welcome. Are you ready? Y / N")
-    if 'Y' in start:
-            return 1
-def wake_up():
-    print("There is a heaviness in your lungs. Your breath comes slowly, thickly, dragging through your throat and filling your chest. Your limbs feel weightless, and they respond sluggishly as you attempt to move. You open your eyes, and the world is a hazy, diffused orange, as if you were lying at the bottom of a pool.") 
-    print("Wait. \nYou realize you're surrounded by liquid. You're in a tank and you're suspended in liquid. You're going to drown holy shit you're – ")
-    print("Your breathing speeds up, your throat burning as you – wait. You can breathe the liquid. It's fine. \nYou force your breathing to slow. You're fine. Waking up from long missions is always disorienting, though usually the stasis capsule automatically drains the suspension liquid before revival.")
-    print("Your breathing pick up again. This may be a problem. If you're awake before the stasis liquid has been drained from your pod, then something is very wrong. You need to get out, immediately.")
-    
-    choice_break = input("Break out? Y / N")
-    break_out = "You drag your arms from your sides and slam them weakly against the lid of your capsule. Using your fists, then your palms, then your feet you bang against the sides of your capsule, to no effect. Your breath is speeding up again."
-    exit_capsule = "There's a muffled sucking sound as the lid of your capsule whirs to life, lifting away as the liquid begins to drain. You attempt to sit up, flopping back down weakly as your muscles betray you. You turn on your side, the stasis liquid dripping thickly from your mouth as you gag. You can't draw a breath, your lungs still choked with fluid. The reassimilation process is always horrible, tens of minutes of feeling like you're drowning as the stasis liquid is absorbed into your body. All you can do now is wait."
-    calm_down = "You sag limply against the bottom of your capsule. There's no way you'll be able to break out of this thing; it was built to withstand any number of disasters. Not that you fully trust it to be that effective; the tech of this tank is decades old. Your employer was just too cheap to update anything, especially for the lowly scouting team. \n Well, you're going to die here. How wonderful. This is exactly how you imagined a career as a planetary scientist to go. You love dying. Really. \n You're getting bored. Dying takes a long time. You pull your arms from your sides and being feeling the bounds of your death prison, you know, just in case you find a magic death button. Your fingers catch on something by your left shoulder. You press it, and –"
-    calm_not = "You continue to lose your shit. You did not spend years of your life training to be a planetary scientist just to die in a stasis tank. In your flailing, you twist into the left side of the capsule. Something digs into your shoulder, and you twist and manically claw it. It's a button. You press it, and –"
-    if "Y" in choice_break:
-        print(break_out)
-        choice_calm = input("Would you like to calm down a bit? Y / N")
-        if "Y" in choice_calm:
-            print(calm_down)
-            print(exit_capsule)
-        else:
-            print(calm_not)
-            print(exit_capsule)
-    elif "N" in choice_break:
-        print(calm_down)
-        print(exit_capsule)
+#An Adventure Called Rust
 
-def capsule_puzzle():
-    print()
-                
-def explore_stasis():
-    print("You lay limply in your tank, now empty. Your chest burns as air returns, slowly, to your lungs. You manage to push yourself up, though weakly; your muscles are thin and atrophied, limbs little more than bone and skin. You climb out of your tank, grasping the edge for balance, and crumple to the floor. You shiver as you lay there, medical gown clinging wetly to your skin.")
-    
-    examine_own = "You grasp the edge of your capsule and strain upwards, shaking with effort as you struggle to your feet. You pause for breath once upright, bracing your arms against the rim of your capsule. Now that you're awake, there's nothing inside. You reach up and pull down the lid, revealing the flickering displays lining the outside: static runs through the main dashboard, disrupting an empty vitals display; red text flashes at the top of the dashboard, SYSTEMS ERROR: EMERGENCY REVIVAL. \nYou wonder what made your capsule short out. You suppose that the systems are old enough that it shouldn't come as a surprise; your company is always loathe to give the scouting operations the funding they need. They prefer to keep their money concentrated in corporate. Never mind that the mining operations are their real source of revenue. Selfish bastards."
-    examine_others = "You grasp the edge of your capsule and strain upwards, shaking with effort as you struggle to your feet. You pause for breath once upright, turning to observe the room. There are five capsules besides your own, housing the crew members you were barely introduced to before you all were placed in stasis. Two capsules have completely dark displays, two others look about as they should, and the last – \nThe last capsule is open."
-    examine_dark = "You make your halting way to the capsules with darkened displays. Your gut clenches as you get closer. None of the functions of the capsule seem to be working; the stasis liquid of both is too still, congealed fluid rimming the half-drained tanks. You peer through the crusted lid of the tank and have to take a step back. Your crewmate, a materials scientist, peers up at you with half-lidded, vacant eyes. Her ashen, water-logged face has its own gravity, pulling your eyes back to it when you try to look away. This was her first mission. She shook your hand and told you that this was her first opportunity to apply her schooling. You force yourself away from her capsule. Her casket now. \nYou move on to the other darkened capsule, prepared now for what you'll find. It's the pilot's face that looms out at you now, oddly discolored through the filter of the stasis liquid. He was charming man from what you'd seen of him, but more importantly, he was your ticket out of here. Hopefully you'll be able to put out a distress call without him; you know the pilot held the majority of the ship's access codes. All systems on board can be accessed with his fingerprint, where other crew members have more limited access. Two of your crewmates are dead; hopefully, neither are your chances at getting out of here."
-    examine_fine = "The two capsules closest to you seem to be fine. You approach the first capsule. The face of the ship's engineer lies there, serene. She's alive. You breathe a sigh of relief. The medic lying in the capsule beside hers is similarly not dead."
-    examine_open = "You approach the open capsule apprehensively, but your nerves are for naught. It's empty. It seems that the capsule has executed its self-cleaning routine, and no residue remains in the tank. There are towels scattered about the base of the capsule, gone stiff as the viscous stasis liquid dried them into their contorted shapes. You pull down the capsule lid, revealing a dark screen. It does not respond when you try to touch it."
-    open_thought = "You remember the occupant of this capsule. He was a mechanic, there to make sure the company's ships don't break down. Which they do anyways, but that's not his fault. Though, he was reassigned to your mission at the last moment, and you've heard there have been…problems with his past assignments. And, why is his the only capsule that seems to be in perfect condition? This seems suspicious. \nWell, even if he has nothing to do with these strange malfunctions, you should probably find him. Maybe he'll have insight into what crippled the stasis bay."
-    
-    choice_look = input("If you would like to examine your own capsule, enter ''A''. If you would like to examine the other capsules, enter ''B''.")
-    if "A" in choice_look:
-        print(examine_own)
-        print("You decide you should probably take a look around at the other capsules as well.")
-        print(examine_others)
-    elif "B" in choice_look: 
-        print(examine_others)
-    
-    def investigate_capsules(choice_investigate): 
-        check = [0,0,0]
-        if "A" in choice_investigate:
-            check[0] = 1
-            print(examine_dark)
-        elif "B" in choice_investigate:
-            check[1] = 1
-            print(examine_fine)
-            capsule_puzzle()
-        elif "C" in choice_investigate:
-            check[2] = 1
-            print(examine_open)
-            print(open_thought)
-        if check[0]==1 and check[1]==1 and check[2]==1:
-            print("You've learned all you can here. Move on; you have a mystery to solve.")
-            return 1
-     
-    complete = 0
-    while complete==0:  
-        choice_investigate = input("Type ''A'' if you would like to examine the darkened capsules. Type '''B''' if you would like to examine the stable capsules. Type '''C''' if you would like to examine the open capsule.")
-        complete = investigate_capsules(choice_investigate)
-        
-def chapter_one():
+def chapter_1():
+
+    def begin():
+        print "Welcome to RUST. Are you ready?"
+        start = input("Type anything (in quotes!) to begin. ")
+        if "anything" in start.lower():
+            print("Thank you, jackass. ")
+        else:
+            print("Thank you. ")
+        print(" ")
+        year = input("Now, if you were to create a story about the future, what year would you set it in? (No quotes this time.) ")
+        print(" ")
+        return
+
     begin()
+
+    def wake_up():
+        print(
+        "...There is a heaviness in your lungs. The breath comes slowly, thickly, dragging through your throat and filling your chest. "
+        "\nYou look down at your hands, and see them dimly lit by lights on the edges of the pod you are encased in. "
+        "\nWhat is outside looms, refraction too heavy to calculate in your bleary state.")
+        exp = input("Do you further evaluate your situation? (Quotes again, please.) (y/n) ")
+        look_around = "(Next time, just type L to look around, and type anything to continue text output if there's no available prompt. Make sure all that's in quotes.) " \
+                      "\nA clear liquid, the source of that difficulty in breathing, surrounds you. " \
+                      "\nThrough it, you see the warped shapes of three other stasis pods across from you, and two to your left, although only the one to your immediate left can be seen. "
+        s_wkup_txt = "\nIt is getting more and more difficult to breathe."
+        if "y" in exp.lower():
+            print(" ")
+            input(look_around)
+            print(" ")
+            input("There are five other pods, making two rows of three that face each other. Yours is the furthest to the right of the bottom row. ")
+            print(" ")
+            input("The other pods are covered with a protective windowed metal covering, such that if you could get any more than vague outlines of what's outside your pod, you could only see the head and chest. "
+                  "\nSpeaking of which, your pod does not seem to have this covering -- only a thin, clear, hard barrier. ")
+            return
+        else:
+            print(" ")
+            exp = input("You decide to not be inquisitive, and instead just hang limply, trying at least to slow down your breathing to a rate more agreeable with the physical constraints of the liquid. "
+                        "\nType L to change your mind. ")
+            if "l" in exp.lower():
+                print(" ")
+                input(look_around)
+                print(" ")
+                input("The other pods are covered with a protective metal covering, such that you could only see the faces of their occupants, if you could get any more than vague outlines of what's outside your pod. "
+                      "\nSpeaking of which, your pod does not seem to have this covering -- only a thin, clear, hard barrier. ")
+            else:
+                print(" ")
+                ca = input("...If you're going to be like that, type ""sorry"" or I crash the game. ")
+                if "sorry" in ca.lower():
+                    print(" ")
+                    print("Thanks; try to be a little more polite. ")
+                    wake_up()
+                else:
+                    asdf
+            return 1
+        return 1
+
     wake_up()
-    explore_stasis()
+
+    def status_wkup():
+        print(" ")
+        s = input("...It is getting more and more difficult to breathe. (In addition to typing L to look around, type A if you want to perform an action!) ")
+        if "a" in s.lower():
+            def action():
+                print(" ")
+                a = input(
+                    "Type 1 to attempt to break out of the capsule; type 2 to thrash about, type b to go back. ")
+                if "1" in a:
+                    print(" ")
+                    input("You drag your arms from your sides and slam them weakly against the lid of your capsule. Using your fists, then your palms, then your feet you bang against the sides of your capsule, to no effect. "
+                          "\nYour breath is speeding up again. ")
+                    print(" ")
+                    input("You absolutely lose your shit. You did not spend years of your life training to be a planetary scientist just to die in a stasis tank. ")
+                    print(" ")
+                    cc = input("You suddenly remember your watch. Use watch to break out? (y/n) ")
+                    if "y" in cc.lower():
+                        print(" ")
+                        break_watch()
+                    else:
+                        print(" ")
+                        print("You attempt to resist the urge to attempt to break yourself out, but panic makes your decision for you. ")
+                        break_watch()
+                        print(" ")
+                elif "2" in a:
+                    print(" ")
+                    input("You successfully thrash about, but this only succeeds in making it harder to breathe as your pulse quickens. "
+                          "\nWaking up from long missions is always disorienting, though usually the stasis capsule automatically drains the suspension liquid before revival. ")
+                    print(" ")
+                    action()
+                elif "b" in a:
+                    print(" ")
+                    status_wkup()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    action()
+
+            action()
+        elif "l" in s:
+            def look():
+                print(" ")
+                l = input(
+                    "Type 1 to examine the other pods; type 2 to examine your current situation, type b to go back. ")
+                if "1" in l:
+                    print(" ")
+                    input("The pod to your immediate left has someone else in it -- from what you can tell, a man in his forties, wearing the same light blue scrubs as you are. "
+                          "\nThe pod facing directly towards you and the one to its right (your left) look to contain people as well though they are too far away to see clearly. "
+                          "\nThe pod to the furthest left of the row facing you is open. ")
+                    look()
+                elif "2" in l:
+                    print(" ")
+                    yna = input("Looking down at yourself, you appear to be wearing light blue scrubs and a glittering golden watch. Check the time? (y/n) ")
+                    if "y" in yna.lower():
+                        print(" ")
+                        input("It's 4:37, but you were probably in stasis for long enough for the battery to run out. Honestly, you don't know why you left it on! ")
+                        look()
+                    elif "n" in yna.lower():
+                        print(" ")
+                        input("Yeah, it's probably broken anyway. ")
+                        look()
+                    else:
+                        print(" ")
+                        print("That is not a valid option.")
+                        look()
+                elif "3" in l:
+                    print(" ")
+                    input("Oh, you rebel, you. ")
+                    look()
+                elif "b" in l.lower():
+                    status_wkup()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    look()
+
+            look()
+
+        else:
+            print(" ")
+            print("That is not a valid option.")
+            status_wkup()
+
+    def break_watch():
+        input("With an incredible effort, spurred at least partly by primal fear of air loss, you smash the watch on your right hand against the wall of the capsule. ")
+        print(" ")
+        cb = input("After six or seven tries, each more panicked than the last, the glass-like barrier breaks, and fluid begins to spill out. Use your knee to widen the hole? (y/n) ")
+        if "y" in cb.lower():
+            print(" ")
+            input("You slam your knee against the crack in the surface, hoping that it isn't actually glass. ")
+            print(" ")
+            input("Using your arms now, you break the surface and climb out of the pod. "
+                  "\nYou cough and half-vomit violently as your lungs adjust to their new environment. ")
+            print(" ")
+            input("After you're finished clearing your lungs, you draw yourself to your full height and look around the room. ")
+        else:
+            print(" ")
+            input("Using your arms, you break the surface and climb out of the pod. "
+                  "\nYou cough and half-vomit violently as your lungs adjust to their new environment. ")
+            print(" ")
+            input("After you're finished clearing your lungs, you draw yourself to your full height and look around the room. ")
+
+    status_wkup()
+
+    def status_stasis():
+        print(" ")
+        s = input("The stasis room is dusty and disordered. ")
+        if "a" in s.lower():
+            def action():
+                print(" ")
+                a = input(
+                    "Type 1 to use towels on the floor to dry the life support fluid off; "
+                    "\nType 2 to attempt to open the capsules facing you; "
+                    "\nType 3 to try to open one of the capsules to your left; "
+                    "\nType b to go back. ")
+                if "1" in a:
+                    print(" ")
+                    input("You use the towels to dry yourself off, so that you feel a little less gross. "
+                          "\nThey are labeled with the logo of IRAC -- the Interstellar Resource Acquisition Company; your employer. ")
+                    action()
+                elif "2" in a:
+                    print(" ")
+                    input("Upon attempting to open the two occupied capsules opposite yours, you find that the GUIs on both are dead, rendering them inaccessible. ")
+                    print(" ")
+                    action()
+                elif "3" in a:
+                    print(" ")
+                    ca = input("The GUIs on these units are fully functional. With your limited knowledge of coding, do you want to try to hack one of the pods open? (y/n) ")
+                    if "y" in ca.lower():
+                         print(" ")
+                         cb = input("Whose pod do you want to attempt to hack open? (Engineer/Medic/Nevermind) ")
+                         if "engineer" in cb.lower():
+                             print(" ")
+                             input("You log onto the GUI interface and find that the system is in emergency shutdown mode. \nIn order to open, it needs to verify your identity by asking you a riddle. ")
+                             print(" ")
+                             print("The riddle reads as such: ")
+                             print(" ")
+                             cc = input("What is the meaning of life? ")
+                             if "42" in cc:
+                                 print(" ")
+                                 cd = input("Everyone knows that, but what's the question? ")
+                                 if "memes" in cd.lower():
+                                     print(" ")
+                                     print("You win so hard, bruh. c: ")
+                                     return
+                                 else:
+                                     engi_no_more()
+                             else:
+                                 print(" ")
+                                 print("There are two tries remaining.")
+                                 cc = input("What is the meaning of life? ")
+                                 if "42" in cc:
+                                     print(" ")
+                                     cd = input("Everyone knows that, but what's the question? ")
+                                     if "memes" in cd.lower():
+                                         print(" ")
+                                         print("You win so hard, bruh. c: ")
+                                         return
+                                     else:
+                                         engi_no_more()
+                                 else:
+                                     print(" ")
+                                     print("There is one try remaining.")
+                                     cc = input("What is the meaning of life? ")
+                                     if "42" in cc:
+                                         print(" ")
+                                         cd = input("Everyone knows that, but what's the question? ")
+                                         if "memes" in cd.lower():
+                                             print(" ")
+                                             print("You win so hard, bruh. c: ")
+                                             return
+                                         else:
+                                             engi_no_more()
+                                     else:
+                                         engi_no_more()
+
+                         elif "medic" in cb.lower():
+                             print(" ")
+                             input(
+                                 "You log onto the GUI interface and find that the system is in emergency shutdown mode. "
+                                 "\nIn order to open, it needs to verify your identity by asking you a riddle. ")
+                             print(" ")
+                             print("The riddle reads as such: ")
+                             print(" ")
+                             cc = input("A hunter and a bear meet in a wasteland. No one else is around."
+                                        "\nBoth freak out and flee; the hunter directly to the north and the bear directly to the west."
+                                        "\nThe hunter then turns around, shoots directly south, and shoots the bear dead."
+                                        "\nWhat color was the bear? ")
+                             if "white" in cc:
+                                 print(" ")
+                                 medic_alive()
+                             else:
+                                 print(" ")
+                                 print("There are two tries remaining.")
+                                 print(" ")
+                                 cc = input("A hunter and a bear meet in a wasteland. No one else is around."
+                                            "\nBoth freak out and flee; the hunter directly to the north and the bear directly to the west."
+                                            "\nThe hunter then turns around, shoots directly south, and shoots the bear dead."
+                                            "\nWhat color was the bear? ")
+                                 if "white" in cc:
+                                     print(" ")
+                                     medic_alive()
+                                 else:
+                                     print(" ")
+                                     print("There is one try remaining.")
+                                     print(" ")
+                                     cc = input("A hunter and a bear meet in a wasteland. No one else is around."
+                                                "\nBoth freak out and flee; the hunter directly to the north and the bear directly to the west."
+                                                "\nThe hunter then turns around, shoots directly south, and shoots the bear dead."
+                                                "\nWhat color was the bear? ")
+                                     if "white" in cc:
+                                         print(" ")
+                                         medic_alive()
+                                     else:
+                                         print(" ")
+                                         medic_dead()
+
+                         else:
+                             print(" ")
+                             action()
+                    else:
+                        action()
+                    print(" ")
+                    action()
+                elif "b" in a:
+                    print(" ")
+                    status_stasis()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    action()
+
+            action()
+        elif "l" in s.lower():
+            def look():
+                print(" ")
+                l = input(
+                    "Type 1 to consider/look at your escaped pod;"
+                    "\nType 2 to look at the two closed pods in front of you;"
+                    "\nType 3 to look at the two pods to your left;"
+                    "\nType 4 to look at the open pod;"
+                    "\nType 5 to view the general state of the room;"
+                    "\nType b to go back. ")
+                if "1" in l:
+                    print(" ")
+                    input("You see a few shards of the inner pod substance lying on the floor. You're not too injured, so it's probably not glass."
+                          "\n Your pod is still running; your vital signs on the GUI appear quite worrisome. ")
+                    look()
+                elif "2" in l:
+                    print(" ")
+                    ca = input("You approach the two pods facing you, and, upon closer inspection of their occupants, conclude that they are dead."
+                          "\nTheir GUI screens both read ""EMERGENCY SHUTDOWN"". "
+                          "\nLook closer at either occupant? (y/n) ")
+                    if "y" in ca.lower():
+                        cb = input ("Which corpse do you choose to peruse? (Pilot/MatSci/Nevermind)")
+                        if "pilot" in cb.lower():
+                            print(" ")
+                            input("The pilot of the ISV TEMPERANCE was a nice man. His watery corpse seems less so, its decay slowed and yet somehow worsened by the surrounding nutritional fluid."
+                                  "\nOn the chest of his bright blue stasis scrubs, you see a floating yellow key card. ")
+                            look()
+                        elif "matsci" in cb.lower():
+                            print(" ")
+                            input("The materials scientist used to be a rather buff and daring woman, or so you remember her. "
+                                  "\nYou guess her willingness to risk using this crappy ship led to her downfall. ")
+                            input("It's ironic, but that doesn't make it any less sad. TEMPERANCE indeed, IRAC. ")
+                            look()
+                        else:
+                            look()
+                    else:
+                        look()
+                    look()
+                elif "3" in l:
+                    print(" ")
+                    ca = input("You turn to face the two other pods facing in the same direction as yours. "
+                        "\nFrom your limited medical knowledge, it appears that both of these pod occupants are alive."
+                        "\nTheir GUI screens read slow vitals, but still present and consistent. "
+                        "\n Look closer at either occupant? (y/n) ")
+                    if "y" in ca.lower():
+                        cb = input ("Which corpse do you choose to peruse? (Engineer/Medic/Nevermind)")
+                        if "engineer" in cb.lower():
+                            print(" ")
+                            input("You and he never really talked much."
+                                  "\nHe was in charge of operating the systems in cargo that would collect data on the surface of Drahonus. ")
+                            look()
+                        elif "medic" in cb.lower():
+                            print(" ")
+                            input("The medic is a kindly, distracted man with a long face. His stasis scrubs may as well be the ones he wore back home."
+                                  "\n It's always good to bring a medic; an acquisitions company never knows what they'll meet on a purportedly habitable planet. ")
+                            look()
+                        else:
+                            look()
+                    else:
+                        look()
+
+                elif "4" in l:
+                    print(" ")
+                    input("You know that this open pod once had to have contained IRAC's Ship Systems Maintenance-person for the planet scouting."
+                          "\n However, she is nowhere to be seen, and the GUI for her pod is powered off, reading nothing. ")
+                    look()
+                elif "5" in l:
+                    print(" ")
+                    input("You scan the room, finding it in a state of mild disarray. Towels are scattered across the floor, along with stasis fluid and other debris."
+                          "\nEverything in the room has the look of slight oxidation -- then again, IRAC's trying to cut costs, right? ")
+                    look()
+                elif "b" in l.lower():
+                    status_stasis()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    look()
+
+            look()
+
+        else:
+            print(" ")
+            print("That is not a valid option.")
+            status_stasis()
+
+    def status_stasis_medic():
+        print(" ")
+        s = input("The stasis room is dusty and disordered; the hatch to the bridge is open. ")
+        if "a" in s.lower():
+            def action():
+                print(" ")
+                a = input(
+                    "Type 1 to use towels on the floor to dry the life support fluid off; "
+                    "\nType 2 to attempt to open the capsules facing you; "
+                    "\nType 3 to try to open the engineer's capsule to your left; "
+                    "\nType 4 to exit to the bridge [no return];"
+                    "\nType b to go back. ")
+                if "1" in a:
+                    print(" ")
+                    input("You use the towels to dry yourself off, so that you feel a little less gross. "
+                          "\nThey are labeled with the logo of IRAC --  the Interstellar Resource Acquisition Company, your employer. ")
+                    action()
+                elif "2" in a:
+                    print(" ")
+                    input(
+                        "Upon attempting to open the two occupied capsules opposite yours, you find that the GUIs on both are dead, rendering them inaccessible. ")
+                    print(" ")
+                    action()
+                elif "3" in a:
+                    print(" ")
+                    ca = input(
+                        "You've already busted the medic out; will you try saving the engineer? (y/n) ")
+                    if "y" in ca.lower():
+                            print(" ")
+                            input(
+                                "You log onto the GUI interface and find that the system is in emergency shutdown mode. \nIn order to open, it needs to verify your identity by asking you a riddle. ")
+                            print(" ")
+                            print("The riddle reads as such: ")
+                            print(" ")
+                            cc = input("What is the meaning of life? ")
+                            if "42" in cc:
+                                print(" ")
+                                cd = input("Everyone knows that, but what's the question? ")
+                                if "Bees?" in cd.lower():
+                                    print(" ")
+                                    print("You win so hard, bruh. c: ")
+                                    return
+                                else:
+                                    engi_no_more_m()
+                            else:
+                                print(" ")
+                                print("There are two tries remaining.")
+                                cc = input("What is the meaning of life? ")
+                                if "42" in cc:
+                                    print(" ")
+                                    cd = input("Everyone knows that, but what's the question? ")
+                                    if "Bees?" in cd.lower():
+                                        print(" ")
+                                        print("You win so hard, bruh. c: ")
+                                        return
+                                    else:
+                                        engi_no_more_m()
+                                else:
+                                    print(" ")
+                                    print("There is one try remaining.")
+                                    cc = input("What is the meaning of life? ")
+                                    if "42" in cc:
+                                        print(" ")
+                                        cd = input("Everyone knows that, but what's the question? ")
+                                        if "Bees?" in cd.lower():
+                                            print(" ")
+                                            print("You win so hard, bruh. c: Doot dee doot that's the winning song")
+                                            return
+                                        else:
+                                            engi_no_more_m()
+                                    else:
+                                        engi_no_more_m()
+                    else:
+                        print(" ")
+                        action()
+
+                elif "4" in a:
+                    print (" ")
+                    ca = input("Are you sure you want to go to the docking bay? (y/n) ")
+                    if "y" in ca.lower():
+                        print (" ")
+                        to_the_bridge_medic()
+                    else:
+                        action()
+                elif "b" in a:
+                    print(" ")
+                    status_stasis_medic()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    action()
+
+            action()
+        elif "l" in s.lower():
+            def look():
+                print(" ")
+                l = input(
+                    "Type 1 to consider/look at your escaped pod;"
+                    "\nType 2 to look at the two closed pods in front of you;"
+                    "\nType 3 to look at the two pods to your left;"
+                    "\nType 4 to look at the open pod;"
+                    "\nType 5 to view the general state of the room;"
+                    "\nType b to go back. ")
+                if "1" in l:
+                    print(" ")
+                    input(
+                        "You see a few shards of the inner pod substance lying on the floor. You're not too injured, so it's probably not glass."
+                        "\n Your pod is still running; your vital signs on the GUI appear quite worrisome. ")
+                    look()
+                elif "2" in l:
+                    print(" ")
+                    ca = input(
+                        "You approach the two pods facing you, and, upon closer inspection of their occupants, conclude that they are dead."
+                        "\nTheir GUI screens both read ""EMERGENCY SHUTDOWN"". "
+                        "\nLook closer at either occupant? (y/n) ")
+                    if "y" in ca.lower():
+                        cb = input("Which corpse do you choose to peruse? (Pilot/MatSci/Nevermind)")
+                        if "pilot" in cb.lower():
+                            print(" ")
+                            input(
+                                "The pilot of the ISV TEMPERANCE was a nice man. His watery corpse seems less so, its decay slowed and yet somehow worsened by the surrounding nutritional fluid."
+                                "\nOn the chest of his bright blue stasis scrubs, you see a floating yellow key card. ")
+                            look()
+                        elif "matsci" in cb.lower():
+                            print(" ")
+                            input(
+                                "The materials scientist used to be a rather buff and daring woman, or so you remember her. "
+                                "\nYou guess her willingness to risk using this crappy ship led to her downfall. ")
+                            input("It's ironic, but that doesn't make it any less sad. TEMPERANCE indeed, IRAC. ")
+                            look()
+                        else:
+                            look()
+                    else:
+                        look()
+                    look()
+                elif "3" in l:
+                    print(" ")
+                    ca = input("You turn to face the two other pods facing in the same direction as yours. "
+                            "\nThe medic has left his pod, and the engineer is still inside. You and he never really talked much."
+                            "\nHe was in charge of operating the systems in cargo that would collect data on the surface of Drahonus. ")
+                    look()
+
+                elif "4" in l:
+                    print(" ")
+                    input(
+                        "You know that this open pod once had to have contained IRAC's Ship Systems Maintenance-person for the planet scouting."
+                        "\n However, she is nowhere to be seen, and the GUI for her pod is powered off, reading nothing. ")
+                    look()
+                elif "5" in l:
+                    print(" ")
+                    input(
+                        "You scan the room, finding it in a state of mild disarray. Towels are scattered across the floor, along with stasis fluid and other debris."
+                        "\nEverything in the room has the look of slight oxidation -- then again, IRAC's trying to cut costs, right? ")
+                    look()
+                elif "b" in l.lower():
+                    status_stasis_medic()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    look()
+
+            look()
+
+        else:
+            print(" ")
+            print("That is not a valid option.")
+            status_stasis_medic()
+
+    def status_stasis_medic_death():
+        print(" ")
+        s = input("The stasis room is dusty and disordered, now with a dead doctor. ")
+        if "a" in s.lower():
+            def action():
+                print(" ")
+                a = input(
+                    "Type 1 to use towels on the floor to dry the life support fluid off; "
+                    "\nType 2 to attempt to open the capsules facing you; "
+                    "\nType 3 to try to open one of the capsules to your left; "
+                    "\nType 4 to exit to the bridge [no return];"
+                    "\nType b to go back. ")
+                if "1" in a:
+                    print(" ")
+                    input("You use the towels to dry yourself off, so that you feel a little less gross. "
+                          "\nThey are labeled with the logo of IRAC -- the Interstellar Resource Acquisition Company; your employer. ")
+                    action()
+                elif "2" in a:
+                    print(" ")
+                    input("Upon attempting to open the two occupied capsules opposite yours, you find that the GUIs on both are dead, rendering them inaccessible. ")
+                    print(" ")
+                    action()
+                elif "3" in a:
+                    print(" ")
+                    ca = input("The GUIs on these units are fully functional. With your limited knowledge of coding, do you want to try to hack one of the pods open? (y/n) ")
+                    if "y" in ca.lower():
+                         print(" ")
+                         cb = input("Whose pod do you want to attempt to hack open? (Engineer/Medic/Nevermind) ")
+                         if "engineer" in cb.lower():
+                             print(" ")
+                             input("You log onto the GUI interface and find that the system is in emergency shutdown mode. \nIn order to open, it needs to verify your identity by asking you a riddle. ")
+                             print(" ")
+                             print("The riddle reads as such: ")
+                             print(" ")
+                             cc = input("What is the meaning of life? ")
+                             if "42" in cc:
+                                 print(" ")
+                                 cd = input("Everyone knows that, but what's the question? ")
+                                 if "memes" in cd.lower():
+                                     print(" ")
+                                     print("You win so hard, bruh. c: ")
+                                     return
+                                 else:
+                                     engi_no_more()
+                             else:
+                                 print(" ")
+                                 print("There are two tries remaining.")
+                                 cc = input("What is the meaning of life? ")
+                                 if "42" in cc:
+                                     print(" ")
+                                     cd = input("Everyone knows that, but what's the question? ")
+                                     if "memes" in cd.lower():
+                                         print(" ")
+                                         print("You win so hard, bruh. c: ")
+                                         return
+                                     else:
+                                         engi_no_more()
+                                 else:
+                                     print(" ")
+                                     print("There is one try remaining.")
+                                     cc = input("What is the meaning of life? ")
+                                     if "42" in cc:
+                                         print(" ")
+                                         cd = input("Everyone knows that, but what's the question? ")
+                                         if "memes" in cd.lower():
+                                             print(" ")
+                                             print("You win so hard, bruh. c: ")
+                                             return
+                                         else:
+                                             engi_no_more()
+                                     else:
+                                         engi_no_more()
+
+                         elif "medic" in cb.lower():
+                             print(" ")
+                             input(
+                                 "You log onto the GUI interface and find that the system is in emergency shutdown mode. "
+                                 "\nIn order to open, it needs to verify your identity by asking you a riddle. ")
+                             print(" ")
+                             print("The riddle reads as such: ")
+                             print(" ")
+                             cc = input("A hunter and a bear meet in a wasteland. No one else is around."
+                                        "\nBoth freak out and flee; the hunter directly to the north and the bear directly to the west."
+                                        "\nThe hunter then turns around, shoots directly south, and shoots the bear dead."
+                                        "\nWhat color was the bear? ")
+                             if "white" in cc:
+                                 print(" ")
+                                 medic_alive()
+                             else:
+                                 print(" ")
+                                 print("There are two tries remaining.")
+                                 print(" ")
+                                 cc = input("A hunter and a bear meet in a wasteland. No one else is around."
+                                            "\nBoth freak out and flee; the hunter directly to the north and the bear directly to the west."
+                                            "\nThe hunter then turns around, shoots directly south, and shoots the bear dead."
+                                            "\nWhat color was the bear? ")
+                                 if "white" in cc:
+                                     print(" ")
+                                     medic_alive()
+                                 else:
+                                     print(" ")
+                                     print("There is one try remaining.")
+                                     print(" ")
+                                     cc = input("A hunter and a bear meet in a wasteland. No one else is around."
+                                                "\nBoth freak out and flee; the hunter directly to the north and the bear directly to the west."
+                                                "\nThe hunter then turns around, shoots directly south, and shoots the bear dead."
+                                                "\nWhat color was the bear? ")
+                                     if "white" in cc:
+                                         print(" ")
+                                         medic_alive()
+                                     else:
+                                         print(" ")
+                                         medic_dead()
+
+                         else:
+                             print(" ")
+                             action()
+                    else:
+                        action()
+                    print(" ")
+                    action()
+                elif "4" in a:
+                    print (" ")
+                    ca = input("Are you sure you want to go to the docking bay? (y/n) ")
+                    if "y" in ca.lower():
+                        print (" ")
+                        to_the_bridge()
+                elif "b" in a:
+                    print(" ")
+                    status_stasis()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    action()
+
+            action()
+        elif "l" in s.lower():
+            def look():
+                print(" ")
+                l = input(
+                    "Type 1 to consider/look at your escaped pod;"
+                    "\nType 2 to look at the two closed pods in front of you;"
+                    "\nType 3 to look at the two pods to your left;"
+                    "\nType 4 to look at the open pod;"
+                    "\nType 5 to view the general state of the room;"
+                    "\nType b to go back. ")
+                if "1" in l:
+                    print(" ")
+                    input("You see a few shards of the inner pod substance lying on the floor. You're not too injured, so it's probably not glass."
+                          "\n Your pod is still running; your vital signs on the GUI appear quite worrisome. ")
+                    look()
+                elif "2" in l:
+                    print(" ")
+                    ca = input("You approach the two pods facing you, and, upon closer inspection of their occupants, conclude that they are dead."
+                          "\nTheir GUI screens both read ""EMERGENCY SHUTDOWN"". "
+                          "\nLook closer at either occupant? (y/n) ")
+                    if "y" in ca.lower():
+                        cb = input ("Which corpse do you choose to peruse? (Pilot/MatSci/Nevermind)")
+                        if "pilot" in cb.lower():
+                            print(" ")
+                            input("The pilot of the ISV TEMPERANCE was a nice man. His watery corpse seems less so, its decay slowed and yet somehow worsened by the surrounding nutritional fluid."
+                                  "\nOn the chest of his bright blue stasis scrubs, you see a floating yellow key card. ")
+                            look()
+                        elif "matsci" in cb.lower():
+                            print(" ")
+                            input("The materials scientist used to be a rather buff and daring woman, or so you remember her. "
+                                  "\nYou guess her willingness to risk using this crappy ship led to her downfall. ")
+                            input("It's ironic, but that doesn't make it any less sad. TEMPERANCE indeed, IRAC. ")
+                            look()
+                        else:
+                            look()
+                    else:
+                        look()
+                    look()
+                elif "3" in l:
+                    print(" ")
+                    ca = input("You turn to face the two other pods facing in the same direction as yours. "
+                        "\nFrom your limited medical knowledge, it appears that both of these pod occupants are alive."
+                        "\nTheir GUI screens read slow vitals, but still present and consistent. "
+                        "\n Look closer at either occupant? (y/n) ")
+                    if "y" in ca.lower():
+                        cb = input ("Which corpse do you choose to peruse? (Engineer/Medic/Nevermind)")
+                        if "engineer" in cb.lower():
+                            print(" ")
+                            input("You and he never really talked much."
+                                  "\nHe was in charge of operating the systems in cargo that would collect data on the surface of Drahonus. ")
+                            look()
+                        elif "medic" in cb.lower():
+                            print(" ")
+                            input("The medic is a kindly, distracted man with a long face. His stasis scrubs may as well be the ones he wore back home."
+                                  "\n It's always good to bring a medic; an acquisitions company never knows what they'll meet on a purportedly habitable planet. ")
+                            look()
+                        else:
+                            look()
+                    else:
+                        look()
+
+                elif "4" in l:
+                    print(" ")
+                    input("You know that this open pod once had to have contained IRAC's Ship Systems Maintenance-person for the planet scouting."
+                          "\n However, she is nowhere to be seen, and the GUI for her pod is powered off, reading nothing. ")
+                    look()
+                elif "5" in l:
+                    print(" ")
+                    input("You scan the room, finding it in a state of mild disarray. Towels are scattered across the floor, along with stasis fluid and other debris."
+                          "\nEverything in the room has the look of slight oxidation -- then again, IRAC's trying to cut costs, right? ")
+                    look()
+                elif "b" in l.lower():
+                    status_stasis()
+                else:
+                    print(" ")
+                    print("That is not a valid option.")
+                    look()
+
+            look()
+
+        else:
+            print(" ")
+            print("That is not a valid option.")
+            status_stasis()
+
+    def engi_no_more():
+        input("The GUI beeps in a rather displeased manner, reading ""EMERGENCY SHUTDOWN"" in block text on a bright red background."
+              "\nThe following visuals through the window look about right for what it would be like if one's soul spontaneously left their body. ")
+        status_stasis()
+
+    def engi_no_more_m():
+        input("The GUI beeps in a rather displeased manner, reading ""EMERGENCY SHUTDOWN"" in block text on a bright red background."
+              "\nThe following visuals through the window look about right for what it would be like if one's soul spontaneously left their body. ")
+        status_stasis_medic()
+
+    def medic_dead():
+        input("A rather shrill beep comes from the GUI, and the screen goes bright red, reading ""EMERGENCY SHUTDOWN""."
+              "\nThe limp, floating body of the medic begins to convulse, and then goes still, looking somewhat less alive than it did before ""EMERGENCY SHUTDOWN"".")
+        print(" ")
+        input("\nThe irony of a shrill beep preceding a doctor's death is not lost on you. ")
+        status_stasis_medic_death()
+
+    def medic_alive():
+        input("A pleased beep comes from the GUI as you fill in the answer. "
+              "\nThe protective metal covering slides up, the life support fluid drains, and the glass-like interior surface slides down. "
+              "\nA tall, lanky man with a long face and the same light blue scrubs as you woozily falls out of the life support fluid into the room. ")
+        print(" ")
+        ca = input("Bleary but purposeful, he surveys the state of the room and very professionally asks you what happened. ")
+        print(" ")
+        input(ca + ", he says. Yes, that makes sense, he mutters to himself. ")
+        print(" ")
+        input("The medic says something quickly and hurriedly about considering an escaped Systems Maintenance-person, and then wanders down the hall into the bridge. ")
+        print(" ")
+        status_stasis_medic()
+
+    def to_the_bridge_medic():
+        input("You exit the stasis room, going down the joint hallway to the bridge."
+              "\nThe ship is laid out like a flower, in which the stasis room is one of the petals, and the bridge is the center. All of this is spinning very quickly. ")
+        print(" ")
+        input("As you travel towards the bridge, artificial gravity lessens and lessens, until you are floating at the open hatch. ")
+        print(" ")
+        input("You enter the hatch into the emergency-light lit environment of the bridge. "
+              "\nLooking upwards, in the ship's direction of travel, you can see heavily blue-shifted stars. ")
+        print(" ")
+        input("You also see several floating disordered data and flight control consoles, various bits of rusted space-age machinery, and a very terrified doctor in his scrubs." )
+        print(" ")
+        year = input("Don't you understand, he says to you. Don't you understand!? What year do you think it is? ")
+        print(" ")
+        print(" ")
+        input("IT'S THREE HUNDRED YEARS AFTER WE LEFT!")
+
+        print(" ")
+        print("END OF PART ONE")
+        print(" ")
+        return
+
+    def to_the_bridge():
+        input("You exit the stasis room, going down the joint hallway to the bridge."
+              "\nThe ship is laid out like a flower, in which the stasis room is one of the petals, and the bridge is the center. All of this is spinning very quickly. ")
+        print(" ")
+        input(
+            "As you travel towards the bridge, artificial gravity lessens and lessens, until you are floating at the open hatch. ")
+        print(" ")
+        input("You enter the hatch into the emergency-light lit environment of the bridge. "
+              "\nYou see several floating disordered data and flight control consoles, various bits of rusted space-age machinery. ")
+        print(" ")
+        input("Looking up in the ship's direction of travel, you see heavily blue-shifted stars. ")
+        print(" ")
+        input("This makes you anxious. You try to swallow, but your throat is dry."
+              "\nBased off of the friction from ambient particles in space, the area of your spaceship, and the level of blueshifting of the stars...")
+        print(" ")
+        input("You've been under for around 300 years. ")
+
+        print(" ")
+        print("END OF PART ONE")
+        print(" ")
+        return
+
+    status_stasis()
+
+chapter_1()
